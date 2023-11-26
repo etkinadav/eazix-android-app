@@ -1,0 +1,95 @@
+<mat-sidenav-container>
+  <mat-sidenav #drawer class="sidenav" mode="over" [(opened)]="isDrawerOpen">
+    <div class="position-absolute w-100 d-flex justify-content-end">
+      <button type="button" mat-icon-button aria-label="Toggle sidenav"
+        class="close-icon d-flex align-item-center justify-content-center" (click)="toggleDrawer()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <mat-nav-list class="d-flex flex-column vh-100">
+      <div class="w-100 d-flex justify-content-center">
+        <img src="assets/images/eazix-logo.png" alt="Eazix Logo" class="eazix-logo">
+      </div>
+      <a mat-list-item>
+        {{'main-nav.q-and-a' | translate}}
+      </a>
+      <a mat-list-item>
+        <div class="w-100 h-100 d-flex align-items-center gap-2">
+          <div class="whatsup-logo-container">
+            <img src="assets/images/whatsup-logo.svg" alt="WhatsUp Logo" class="whatsup-logo">
+          </div>
+          <div>
+            {{'main-nav.contact-us' | translate}}
+          </div>
+        </div>
+      </a>
+
+      <div class="spacer"></div>
+
+      <div class="w-100 d-flex justify-content-between px-2">
+        <button mat-icon-button aria-label="Language" [matMenuTriggerFor]="menuLanguage"
+          class="d-flex justify-content-center align-item-center">
+          <mat-icon>language</mat-icon>
+        </button>
+        <mat-menu #menuLanguage="matMenu">
+          <button class="mat-menu-item-small" mat-menu-item (click)="goToLanguage('en')">English</button>
+          <button class="mat-menu-item-small" mat-menu-item (click)="goToLanguage('he')">עברית</button>
+          <button class="mat-menu-item-small" mat-menu-item (click)="goToLanguage('ar')">العربية</button>
+        </mat-menu>
+        <button mat-icon-button aria-label="Language" [matMenuTriggerFor]="menuTheme"
+          class="d-flex justify-content-center align-item-center">
+          <mat-icon>{{ isDarkTheme ? 'brightness_7' : 'brightness_4' }}</mat-icon>
+        </button>
+        <mat-menu #menuTheme="matMenu">
+          <button class="mat-menu-item-small" mat-menu-item (click)="changeTheme('light')">
+            {{'main-nav.light-mode' | translate}}
+          </button>
+          <button class="mat-menu-item-small" mat-menu-item (click)="changeTheme('dark')">
+            {{'main-nav.dark-mode' | translate}}
+          </button>
+        </mat-menu>
+      </div>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleDrawer()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="spacer"></span>
+      <img src="assets/images/eazix-logo-small.svg" alt="Eazix Logo" class="small-logo">
+      <span class="spacer"></span>
+      <button type="button" mat-raised-button color="primary" class="text-white rounded-pill">
+        {{'main-nav.log-in' | translate}}
+      </button>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <app-header> </app-header>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+<!-- chipchipchipchipchipchipchipchipchipchipchipchipchipchipchipchipchipchip -->
+<!-- <div class="d-none">
+        <mat-chip-listbox aria-label="Language selection" maxLength="1" minLength="1">
+          <mat-chip-option class="small-chip" (click)="goToLanguage('en')" [selected]="selectedLanguage === 'en'"
+            [disabled]="selectedLanguage === 'en'">English</mat-chip-option>
+          <mat-chip-option class="small-chip" (click)="goToLanguage('he')" [selected]="selectedLanguage === 'he'"
+            [disabled]="selectedLanguage === 'he'">Hebrew</mat-chip-option>
+          <mat-chip-option class="small-chip" (click)="goToLanguage('ar')" [selected]="selectedLanguage === 'ar'"
+            [disabled]="selectedLanguage === 'ar'">Arabic</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      <div class="d-none">
+        <mat-chip-listbox aria-label="Theme selection" maxLength="1" minLength="1">
+          <mat-chip-option class="small-chip" (click)="changeTheme('light')" [selected]="selectedTheme === 'light'"
+            [disabled]="selectedTheme === 'light'">{{'main-nav.light-mode' | translate}}</mat-chip-option>
+          <mat-chip-option class="small-chip" (click)="changeTheme('dark')" [selected]="selectedTheme === 'dark'"
+            [disabled]="selectedTheme === 'dark'">{{'main-nav.dark-mode' | translate}}</mat-chip-option>
+        </mat-chip-listbox>
+      </div> -->

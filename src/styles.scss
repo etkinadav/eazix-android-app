@@ -1,0 +1,101 @@
+@use './palette.scss' as palette;
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+
+// Define typography with Open Sans
+$my-typography: mat.define-typography-config($font-family: 'Open Sans, sans-serif');
+
+// Define your palettes
+$light-primary: mat.define-palette(palette.$light-primary);
+$light-accent: mat.define-palette(palette.$light-accent);
+$light-warn: mat.define-palette(palette.$light-warn);
+
+// Define light theme with typography
+$light-theme: mat.define-light-theme((color: (primary: $light-primary,
+                accent: $light-accent,
+                warn: $light-warn,
+            ),
+            typography: $my-typography,
+        ));
+@include mat.all-component-themes($light-theme);
+
+
+$dark-primary: mat.define-palette(palette.$dark-primary);
+$dark-accent: mat.define-palette(palette.$dark-accent);
+$dark-warn: mat.define-palette(palette.$dark-warn);
+
+.darkTheme {
+    $dark-theme: mat.define-dark-theme((color: (primary: $dark-primary,
+                    accent: $dark-accent,
+                    warn: $dark-warn,
+                ),
+                typography: $my-typography,
+            ));
+    @include mat.all-component-themes($dark-theme);
+}
+
+html,
+body {
+    height: 100vh !important;
+}
+
+body {
+    margin: 0;
+}
+
+.spacer {
+    flex: 1 1 0;
+}
+
+
+:root {
+    /* -----------------------------===---------------------------------- DARK */
+    --zx-dark: #262626;
+    --zx-dark-light: #333333;
+    --zx-dark-90-pr: rgba(38, 38, 38, 0.9);
+    --zx-dark-75-pr: rgba(38, 38, 38, 0.75);
+    --zx-dark-25-pr: rgba(38, 38, 38, 0.25);
+    --zx-dark-10-pr: rgba(51, 51, 51, 0.1);
+    --zx-dark-light-30-pr: rgba(202, 202, 202, 0.3);
+    /* -----------------------------===---------------------------------- GRAY */
+    --zx-gray-v-light: #E0E0E0;
+    --zx-gray-v-v-light: #F2F2F2;
+    --zx-gray-v-v-v-light: #F8F8F8;
+    --zx-gray-light-opacity: rgba(69, 69, 69, 0.1);
+    --zx-gray-opacity: rgba(55, 14, 36, 0.1);
+    --zx-gray-v-light-opacity: rgba(49, 13, 13, 0.05);
+    --zx-gray-85: rgba(85, 85, 85, 0.3);
+    --zx-gray-25-pr: rgba(200, 200, 200, 0.25);
+    --zx-gray-mid: #757575;
+    --zx-gray-light-mid: #b1b1b1;
+    /* -----------------------------===---------------------------------- WHITE */
+    --zx-white-90-pr: rgba(255, 255, 255, 0.9);
+    --zx-white-75-pr: rgba(255, 255, 255, 0.75);
+    --zx-white-50-pr: rgba(255, 255, 255, 0.5);
+    --zx-white-20-pr: rgba(255, 255, 255, 0.2);
+    /* -----------------------------===---------------------------------- GREEN */
+    --zx-green: #46A294;
+    --zx-green-light: #7dbdb4;
+    --zx-green-vivid-light: rgba(72, 161, 148, 0.7);
+    --zx-green-vivid-v-light: rgba(72, 161, 148, 0.2);
+    --zx-green-vivid-v-v-light: rgba(70, 162, 148, 0.1);
+    --zx-green-vivid-light-no-oppacity: rgb(179, 216, 211);
+    --zx-green-slightly-light: rgba(70, 162, 148, 0.15);
+    --zx-green-v-light: rgba(70, 162, 148, 0.07);
+    --zx-green-v-v-light: rgba(70, 162, 148, 0.05);
+    /* -----------------------------===---------------------------------- PINK */
+    --zx-pink: #972563;
+    --zx-pink-light: #bc378032;
+    --zx-pink-light-25-pr: rgba(55, 14, 36, 0.25);
+    --zx-pink-v-v-light: rgba(55, 14, 36, 0.5);
+    --zx-pink-slightly-light: #bc3780;
+    /* -----------------------------===---------------------------------- RED */
+    --zx-red: #B70A0A;
+    --zx-red-slightly-dark: #9c0707;
+    --zx-red-dark: #b70a0a40;
+    --zx-red-dark-10-pr: #c70b0b10;
+    --zx-red-light: #ffdede;
+    /* -----------------------------===---------------------------------- OTHER */
+    --ez-whatsup-bg: #29A71A;
+    --ez-whatsup-bg-hover: #259618;
+}

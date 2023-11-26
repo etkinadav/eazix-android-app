@@ -1,0 +1,89 @@
+/* ==== sidenav ==== */
+
+.sidenav {
+  width: 75%;
+  max-width: 250px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 0 12px rgba(85, 85, 85, 0.2);
+  display: flex;
+}
+
+.mat-toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-toolbar mat-icon {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.small-logo {
+  width: 33px;
+  width: auto;
+}
+
+.whatsup-logo {
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+}
+
+.whatsup-logo-container {
+  background-color: var(--ez-whatsup-bg);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.whatsup-logo-container:hover {
+  background-color: var(--ez-whatsup-bg-hover);
+  transition: 150ms;
+}
+
+.eazix-logo {
+  width: 76px;
+  height: 50px;
+  object-fit: cover;
+}
+
+mat-sidenav-container {
+  height: 100vh !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.fillScreen {
+  width: 100% !important;
+  flex-grow: 1 !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column;
+}
+
+mat-sidenav-content {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.close-icon {
+  outline: none;
+  /* Remove the focus outline */
+}
+
+.close-icon.mat-mdc-icon-button ::ng-deep .mat-mdc-button-persistent-ripple {
+  display: none;
+}
