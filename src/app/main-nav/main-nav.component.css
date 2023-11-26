@@ -81,7 +81,6 @@ mat-sidenav-content {
 
 .close-icon {
   outline: none;
-  /* Remove the focus outline */
 }
 
 .close-icon.mat-mdc-icon-button ::ng-deep .mat-mdc-button-persistent-ripple {
