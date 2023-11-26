@@ -3,5 +3,6 @@
 	"main-nav.dark-mode": "Dark Mode",
 	"main-nav.light-mode": "Light Mode",
 	"main-nav.log-in": "Login",
-	"main-nav.q-and-a": "Q and A"
+	"main-nav.q-and-a": "Q and A",
+	"choose-system.title": "Select a printing type"
 }

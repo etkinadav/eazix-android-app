@@ -11,6 +11,7 @@ import { ErrorInterceptor } from "./error-interceptor";
 import { ErrorComponent } from "./error/error.component";
 import { AngularMaterialModule } from "./angular-material.module";
 import { PostsModule } from "./posts/posts.module";
+import { MainSectionComponent } from "./main-section/main-section.component";
 
 import { MainNavComponent } from './main-nav/main-nav.component';
 
@@ -24,7 +25,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     AppComponent,
     HeaderComponent,
     ErrorComponent,
-    MainNavComponent
+    MainNavComponent,
+    MainSectionComponent
   ],
   imports: [
     BrowserModule,
