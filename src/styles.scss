@@ -164,6 +164,13 @@ body {
     background-color: var(--zx-gray-85);
 }
 
-.zx-top-container {
-    height: 28px;
+.svg {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.c-pointer {
+    cursor: pointer;
 }

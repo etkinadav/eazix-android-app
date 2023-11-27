@@ -6,7 +6,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DataSharingService {
   private printingServiceSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  private branches: string[] = ["rupin", "bezalelarc", "unitlv"];
 
   setPrintingService(value: string): void {
     this.printingServiceSubject.next(value);
@@ -16,15 +15,21 @@ export class DataSharingService {
     return this.printingServiceSubject.asObservable();
   }
 
-  // getBranches(): string[] {
-  //   return this.branches;
-  // }
-
-  getBranches(): { name: string; number: number; address: string }[] {
+  getBranches(): { name: string; number: number; systems: string[] }[] {
     return [
-      { name: 'rupin', number: 1, address: 'address-rupin' },
-      { name: 'bezalelarch', number: 2, address: 'address bezalelarch' },
-      { name: 'unitlv', number: 3, address: 'address-unitlv' },
+      { name: 'telhai', number: 1, systems: ['plotter', 'ph'] },
+      { name: 'technion', number: 2, systems: ['plotter', 'ph'] },
+      { name: 'hadarion', number: 3, systems: ['express', 'plotter', 'ph'] },
+      { name: 'rupin', number: 4, systems: ['express', 'plotter'] },
+      { name: 'tau', number: 5, systems: ['express', 'plotter', 'ph'] },
+      { name: 'shenkar', number: 6, systems: ['plotter', 'ph'] },
+      { name: 'minhal', number: 7, systems: ['plotter'] },
+      { name: 'bezalel', number: 2, systems: ['plotter', 'ph'] },
+      { name: 'emuna', number: 3, systems: ['plotter', 'ph'] },
+      { name: 'shluha', number: 3, systems: ['express', 'plotter', 'ph'] },
+      { name: 'nocturno', number: 3, systems: ['plotter'] },
+      { name: 'sapir', number: 3, systems: ['plotter', 'ph'] },
+      { name: 'sami', number: 3, systems: ['plotter'] }
     ];
   }
 }

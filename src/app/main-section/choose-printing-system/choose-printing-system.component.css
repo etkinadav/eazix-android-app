@@ -110,3 +110,7 @@ span.zx-switch-text {
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid var(--zx-gray-v-light);
 }
+
+.zx-top-container {
+    height: 28px;
+}

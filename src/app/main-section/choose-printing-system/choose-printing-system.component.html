@@ -2,70 +2,72 @@
 
 <div class="full-screen overflow-hidden">
     <div class="d-flex flex-grow-1">
-        <div class="zx-settings-nav h-100 d-flex flex-column overflow-auto" [class.zx-settings-nav-dark]="isDarkMode">
-            <article class="w-100 d-flex flex-column gap-3 pt-3 px-1 px-sm-2">
+        <div class="zx-settings-nav h-100 d-flex flex-column overflow-hidden" [class.zx-settings-nav-dark]="isDarkMode">
+            <article class="w-100 d-flex flex-column overflow-auto">
 
-                <div class="zx-top-container w-100 d-flex justify-content-between align-items-center">
-                    <h6 class="zx-main-title">
-                        {{'choose-system.1.title' | translate}}
-                    </h6>
-                    <button mat-button color="primary" class="rounded-3 zx-by-print-no-btn">
-                        <div class="zx-by-print-no-container">
-                            <span class="zx-by-print-no-title">
-                                {{'choose-system.by-printer-number' | translate}}
+                <article class="w-100 d-flex flex-column gap-3 pt-3 px-1 px-sm-2 flex-grow-1">
+                    <div class="zx-top-container w-100 d-flex justify-content-between align-items-center">
+                        <h6 class="zx-main-title">
+                            {{'choose-system.1.title' | translate}}
+                        </h6>
+                        <button mat-button color="primary" class="rounded-3 zx-by-print-no-btn">
+                            <div class="zx-by-print-no-container">
+                                <span class="zx-by-print-no-title">
+                                    {{'choose-system.by-printer-number' | translate}}
+                                </span>
+                                <mat-icon *ngIf="isRTL">keyboard_arrow_left</mat-icon>
+                                <mat-icon *ngIf="!isRTL">keyboard_arrow_right</mat-icon>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div (click)="onChoosePrintingService('express')"
+                        [class.zx-step-choosen]="printingService === 'express'"
+                        class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                        matRipple [class.step-item-dark]="isDarkMode">
+                        <img src="assets/images/express-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
+                        <div class="d-flex flex-column">
+                            <h5 class="zx-title-text zx-switch-text"
+                                [class.zx-text-primary]="printingService === 'express'">
+                                {{'choose-system.title-express' | translate}}
+                            </h5>
+                            <span class="opacity-75 zx-explanation-text zx-switch-text"
+                                [class.zx-text-primary]="printingService === 'express'">
+                                {{'choose-system.explanation-express' | translate}}
                             </span>
-                            <mat-icon *ngIf="isRTL">keyboard_arrow_left</mat-icon>
-                            <mat-icon *ngIf="!isRTL">keyboard_arrow_right</mat-icon>
                         </div>
-                    </button>
-                </div>
-
-                <div (click)="onChoosePrintingService('express')"
-                    [class.zx-step-choosen]="printingService === 'express'"
-                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
-                    matRipple [class.step-item-dark]="isDarkMode">
-                    <img src="assets/images/express-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
-                    <div class="d-flex flex-column">
-                        <h5 class="zx-title-text zx-switch-text"
-                            [class.zx-text-primary]="printingService === 'express'">
-                            {{'choose-system.title-exptess' | translate}}
-                        </h5>
-                        <span class="opacity-75 zx-explanation-text zx-switch-text"
-                            [class.zx-text-primary]="printingService === 'express'">
-                            {{'choose-system.explanation-exptess' | translate}}
-                        </span>
                     </div>
-                </div>
-                <div (click)="onChoosePrintingService('plotter')"
-                    [class.zx-step-choosen]="printingService === 'plotter'"
-                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
-                    matRipple [class.step-item-dark]="isDarkMode">
-                    <img src="assets/images/plotter-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
-                    <div class="d-flex flex-column">
-                        <h5 class="zx-title-text zx-switch-text"
-                            [class.zx-text-primary]="printingService === 'plotter'">
-                            {{'choose-system.title-plotter' | translate}}
-                        </h5>
-                        <span class="opacity-75 zx-explanation-text zx-switch-text"
-                            [class.zx-text-primary]="printingService === 'plotter'">
-                            {{'choose-system.explanation-plotter' | translate}}
-                        </span>
+                    <div (click)="onChoosePrintingService('plotter')"
+                        [class.zx-step-choosen]="printingService === 'plotter'"
+                        class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                        matRipple [class.step-item-dark]="isDarkMode">
+                        <img src="assets/images/plotter-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
+                        <div class="d-flex flex-column">
+                            <h5 class="zx-title-text zx-switch-text"
+                                [class.zx-text-primary]="printingService === 'plotter'">
+                                {{'choose-system.title-plotter' | translate}}
+                            </h5>
+                            <span class="opacity-75 zx-explanation-text zx-switch-text"
+                                [class.zx-text-primary]="printingService === 'plotter'">
+                                {{'choose-system.explanation-plotter' | translate}}
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div (click)="onChoosePrintingService('ph')" [class.zx-step-choosen]="printingService === 'ph'"
-                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
-                    matRipple [class.step-item-dark]="isDarkMode">
-                    <img src="assets/images/ph-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
-                    <div class="d-flex flex-column">
-                        <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="printingService === 'ph'">
-                            {{'choose-system.title-ph' | translate}}
-                        </h5>
-                        <span class="opacity-75 zx-explanation-text zx-switch-text"
-                            [class.zx-text-primary]="printingService === 'ph'">
-                            {{'choose-system.explanation-ph' | translate}}
-                        </span>
+                    <div (click)="onChoosePrintingService('ph')" [class.zx-step-choosen]="printingService === 'ph'"
+                        class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                        matRipple [class.step-item-dark]="isDarkMode">
+                        <img src="assets/images/ph-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
+                        <div class="d-flex flex-column">
+                            <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="printingService === 'ph'">
+                                {{'choose-system.title-ph' | translate}}
+                            </h5>
+                            <span class="opacity-75 zx-explanation-text zx-switch-text"
+                                [class.zx-text-primary]="printingService === 'ph'">
+                                {{'choose-system.explanation-ph' | translate}}
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </article>
 
                 <div class="w-100 opacity-50">
                     <hr>
@@ -82,17 +84,19 @@
                 <div class="ender"></div>
 
             </article>
+            <div class="w-100 p-2 shadow-85-strong">
+                <button type="button" mat-raised-button color="primary" [disabled]="printingService === ''"
+                    [matTooltip]="tooltipContent" class="text-white rounded-pill w-100"
+                    (click)="!isPrintingServiceEmpty() && onUserStep()">
+                    {{ 'choose-system.continue' | translate }}
+                </button>
+            </div>
         </div>
+
         <div class="d-none d-sm-flex h-100 flex-grow-1 justify-content-center align-items-center">
             <article
                 class="zx-canvas shadow-85 rounded-3 d-flex justify-content-center align-items-center position-relative">
             </article>
         </div>
     </div>
-</div>
-<div class="w-100 p-2 p-lg-3 shadow-85-strong">
-    <button type="button" mat-raised-button color="primary" [disabled]="printingService === ''"
-        class="text-white rounded-pill w-100" (click)="!isPrintingServiceEmpty() && onUserStep()">
-        {{ 'choose-system.continue' | translate }}
-    </button>
 </div>

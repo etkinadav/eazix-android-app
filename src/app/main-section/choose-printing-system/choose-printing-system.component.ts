@@ -3,6 +3,7 @@ import { DirectionService } from '../../direction.service';
 import { Subscription } from 'rxjs';
 import { DataSharingService } from '../data-shering-service/data-sharing.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-choose-printing-system',
@@ -18,8 +19,13 @@ export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
   private directionSubscription: Subscription;
   isDarkMode: boolean = true;
   public printingService: string = '';
+  tooltipContent: string = ''; // The tooltip content to be displayed
 
-  constructor(private directionService: DirectionService, private dataSharingService: DataSharingService, private router: Router) { }
+  constructor(private directionService: DirectionService, private dataSharingService: DataSharingService, private router: Router, private translateService: TranslateService) {
+    this.translateService.onLangChange.subscribe(() => {
+      this.updateTooltipContent();
+    });
+  }
 
   ngOnInit() {
     this.directionSubscription = this.directionService.direction$.subscribe(direction => {
@@ -39,6 +45,7 @@ export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
   onChoosePrintingService(value: string) {
     if (value === "express" || value === "plotter" || value === "ph") {
       this.printingService = value;
+      this.updateTooltipContent()
     }
   }
 
@@ -55,5 +62,9 @@ export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
 
   setUserValue(value: string): void {
     this.dataSharingService.setPrintingService(value);
+  }
+
+  updateTooltipContent() {
+    this.tooltipContent = this.translateService.instant('choose-system.btn-tooltip-' + this.printingService);
   }
 }
