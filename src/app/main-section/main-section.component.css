@@ -3,3 +3,118 @@
     flex: 1 0 0;
     display: flex;
 }
+
+:host ::ng-deep span.zx-by-print-no-title {
+    font-size: 12px;
+    text-align: start;
+    align-items: start;
+    display: flex;
+}
+
+:host ::ng-deep div.zx-by-print-no-container {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+:host ::ng-deep img.zx-by-print-no-arrow {
+    width: auto;
+    height: 12px;
+}
+
+:host ::ng-deep h6.zx-main-title {
+    margin: 0 6px 2px 6px;
+}
+
+@media only screen and (min-width: 576px) {
+    :host ::ng-deep div.zx-by-print-no-container {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+    }
+
+    :host ::ng-deep img.zx-by-print-no-arrow {
+        width: auto;
+        height: 15px;
+    }
+
+    :host ::ng-deep h6.zx-main-title {
+        margin: 0 10px 3px 10px;
+    }
+}
+
+.zx-settings-nav {
+    width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+    .zx-settings-nav {
+        width: 400px;
+        max-width: 55%;
+        border: 1px solid var(--zx-gray-v-v-light);
+        background-color: var(--zx-gray-v-v-v-light);
+    }
+}
+
+.zx-settings-nav-dark {
+    border: 1px solid var(--mat-sidenav-content-background-color);
+    background-color: var(--zx-gray-85);
+}
+
+:host ::ng-deep button.zx-by-print-no-btn {
+    color: var(--zx-green);
+}
+
+.step-item {
+    background-color: white;
+}
+
+.step-item-dark {
+    background-color: var(--zx-gray-85);
+}
+
+.step-item:hover {
+    background-color: var(--zx-green-vivid-v-light);
+    box-shadow: 4px 4px 15px var(--zx-gray-85);
+    transition: 300ms;
+    cursor: pointer;
+}
+
+:host ::ng-deep span.zx-explanation-text {
+    font-size: 14px;
+}
+
+@media only screen and (min-width: 576px) {
+    :host ::ng-deep span.zx-explanation-text {
+        font-size: 12px;
+    }
+}
+
+:host ::ng-deep h5.zx-switch-text,
+span.zx-switch-text {
+    align-items: center;
+    text-align: center;
+}
+
+@media only screen and (min-width: 576px) {
+
+    :host ::ng-deep h5.zx-switch-text,
+    span.zx-switch-text {
+        align-items: start;
+        text-align: start;
+    }
+}
+
+.zx-service-img {
+    width: 110px;
+    height: auto;
+}
+
+.zx-step-choosen {
+    background-color: var(--zx-green);
+}
+
+.zx-step-choosen:hover {
+    background-color: var(--zx-green);
+}

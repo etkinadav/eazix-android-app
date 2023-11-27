@@ -66,14 +66,6 @@ mat-sidenav-container {
   flex-direction: column !important;
 }
 
-.fillScreen {
-  width: 100% !important;
-  flex-grow: 1 !important;
-  overflow-y: auto !important;
-  display: flex !important;
-  flex-direction: column;
-}
-
 mat-sidenav-content {
   display: flex !important;
   flex-direction: column;

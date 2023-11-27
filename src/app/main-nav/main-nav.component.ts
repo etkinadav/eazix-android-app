@@ -8,6 +8,9 @@ import { DirectionService } from '../direction.service';
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.css'],
+  host: {
+    class: 'fillScreen'
+  }
 })
 
 export class MainNavComponent {
@@ -44,8 +47,10 @@ export class MainNavComponent {
       this.render.addClass(this.document.body, themeValue + 'Theme');
       if (this.isDarkTheme) {
         this.isDarkTheme = false;
+        this.toggleDarkMode(false);
       } else {
         this.isDarkTheme = true;
+        this.toggleDarkMode(true);
       }
     }
   }
@@ -57,5 +62,10 @@ export class MainNavComponent {
       this.translate.use(lang);
       this.directionService.toLanguageDirection(lang);
     }
+  }
+
+  toggleDarkMode(isDarkMode: boolean) {
+    // Call this method when dark mode changes
+    this.directionService.setDarkMode(isDarkMode);
   }
 }

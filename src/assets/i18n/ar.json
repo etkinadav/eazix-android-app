@@ -4,5 +4,15 @@
     "main-nav.contact-us": "اتصل بنا",
     "main-nav.light-mode": "وضع مضيئة",
     "main-nav.dark-mode": "وضع مظلمة",
-    "choose-system.title": "حدد نوع الطباعة"
+    "choose-system.1.title": "حدد نوع الطباعة",
+    "choose-branch.2.title": "حدد الفرع",
+    "choose-printing-table.3.title": "إضافة الملفات والنظام",
+    "choose-system.by-printer-number": "ابحث برقم الطابعة",
+    "choose-system.continue": "اكمل",
+    "choose-system.title-exptess": "المستندات والصور",
+    "choose-system.explanation-exptess": "طباعة المستندات بأحجام A4 وA3 وA5 وتطوير الصور وطباعة الملصقات. الاستلام الفوري من خلال محطات الطباعة الآلية لدينا.",
+    "choose-system.title-plotter": "الطباعة الراسمة",
+    "choose-system.explanation-plotter": "طباعة الصور والرسومات والأعمال الرسومية بتنسيق واسع (على أوراق عريضة). التجميع فوري من خلال محطات الطباعة الآلية لدينا.",
+    "choose-system.title-ph": "بواسطة دور الطباعة",
+    "choose-system.explanation-ph": "الطباعة على مجموعة واسعة من المواد والمنتجات والتنسيقات المخصصة. أسعار معقولة للطباعة في مجموعة متنوعة من دور الطباعة المتاحة لك على مستوى الدولة."
 }

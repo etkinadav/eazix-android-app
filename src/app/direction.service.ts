@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
@@ -11,6 +11,9 @@ export class DirectionService {
     private LTRLanguages = [
         'en', 'es', 'de', 'fr'
     ]
+
+    private isDarkModeSubject = new BehaviorSubject<boolean>(false);
+    isDarkMode$: Observable<boolean> = this.isDarkModeSubject.asObservable();
 
     toggleDirection() {
         const newDirection = this.directionSubject.value === 'ltr' ? 'rtl' : 'ltr';
@@ -32,5 +35,9 @@ export class DirectionService {
                 this.toggleDirection();
             }
         }
+    }
+
+    setDarkMode(isDarkMode: boolean) {
+        this.isDarkModeSubject.next(isDarkMode);
     }
 }

@@ -4,5 +4,15 @@
 	"main-nav.light-mode": "Light Mode",
 	"main-nav.log-in": "Login",
 	"main-nav.q-and-a": "Q and A",
-	"choose-system.title": "Select a printing type"
+	"choose-system.1.title": "Select a printing type",
+	"choose-branch.2.title": "Select a branch",
+	"choose-printing-table.3.title": "Add files and order",
+	"choose-system.by-printer-number": "Search by printer no.",
+	"choose-system.continue": "Continue",
+	"choose-system.title-exptess": "Documents and Images",
+	"choose-system.explanation-exptess": "Printing documents in A4, A3 and A5 sizes, developing images and printing posters. Immediate collection through our automatic printing stations.",
+	"choose-system.title-plotter": "Plotter Printing",
+	"choose-system.explanation-plotter": "Printing photos, drawings and graphic works in wide format (on wide sheets of paper). Immediate collection through our automatic printing stations.",
+	"choose-system.title-ph": "Via Printing Houses",
+	"choose-system.explanation-ph": "Printing on a wide variety of materials, products and customized formats. Affordable prices for printing in a variety of printing houses available to you nationwide."
 }

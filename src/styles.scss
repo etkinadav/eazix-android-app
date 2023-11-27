@@ -74,9 +74,10 @@ body {
     --zx-white-50-pr: rgba(255, 255, 255, 0.5);
     --zx-white-20-pr: rgba(255, 255, 255, 0.2);
     /* -----------------------------===---------------------------------- GREEN */
-    --zx-green: #46A294;
-    --zx-green-light: #7dbdb4;
+    --zx-green: #26a69a;
+    --zx-green-test: var() --zx-green-light: #7dbdb4;
     --zx-green-vivid-light: rgba(72, 161, 148, 0.7);
+    --zx-green-vivid-m-light: rgba(72, 161, 148, 0.4);
     --zx-green-vivid-v-light: rgba(72, 161, 148, 0.2);
     --zx-green-vivid-v-v-light: rgba(70, 162, 148, 0.1);
     --zx-green-vivid-light-no-oppacity: rgb(179, 216, 211);
@@ -98,4 +99,39 @@ body {
     /* -----------------------------===---------------------------------- OTHER */
     --ez-whatsup-bg: #29A71A;
     --ez-whatsup-bg-hover: #259618;
+}
+
+.fillScreen {
+    width: 100% !important;
+    display: flex !important;
+    flex-grow: 1 !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
+}
+
+/* -----------------------------===---------------------------------- SCROLLERS */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--zx-green-vivid-m-light);
+    border-radius: 2.5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--zx-green);
+}
+
+.shadow-85 {
+    box-shadow: 0 0 10px rgba(85, 85, 85, 0.1);
+}
+
+.shadow-85-strong {
+    box-shadow: 0 0 13px rgba(85, 85, 85, 0.4);
 }

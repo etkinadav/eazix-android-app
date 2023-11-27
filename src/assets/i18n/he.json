@@ -4,5 +4,15 @@
     "main-nav.contact-us": "צור קשר",
     "main-nav.light-mode": "מצב בהיר",
     "main-nav.dark-mode": "מצב כהה",
-    "choose-system.title": "בחר סוג הדפסה"
+    "choose-system.1.title": "בחר סוג הדפסה",
+    "choose-branch.2.title": "בחר סניף",
+    "choose-printing-table.3.title": "קבצים והזמנה",
+    "choose-system.by-printer-number": "חיפוש ע\"פ מס' מדפסת",
+    "choose-system.continue": "המשך",
+    "choose-system.title-exptess": "מסמכים ותמונות",
+    "choose-system.explanation-exptess": "הדפסת מסמכים במידות A4, A3 ו- A5, פיתוח תמונות והדפסת פוסטרים. איסוף מידי דרך עמדות ההדפסה האוטומטיות שלנו.",
+    "choose-system.title-plotter": "הדפסת פלוטר",
+    "choose-system.explanation-plotter": "הדפסת תמונות, שרטוטים ועבודות גרפיות בפורמט רחב (על גליונות נייר רחבים). איסוף מידי דרך עמדות ההדפסה האוטומטיות שלנו.",
+    "choose-system.title-ph": "הדפסה בבתי דפוס",
+    "choose-system.explanation-ph": "הדפסה על מגוון נרחב של חומרים, מוצרים ופורמטים בהתאמה אישית. מחירים משתלמים להדפסה במגוון בתי דפוס הזמינים לכם בפריסה ארצית."
 }
