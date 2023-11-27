@@ -47,6 +47,11 @@ body {
     flex: 1 1 0;
 }
 
+.full-screen {
+    width: 100%;
+    flex: 1 0 0;
+    display: flex;
+}
 
 :root {
     /* -----------------------------===---------------------------------- DARK */
@@ -75,7 +80,6 @@ body {
     --zx-white-20-pr: rgba(255, 255, 255, 0.2);
     /* -----------------------------===---------------------------------- GREEN */
     --zx-green: #26a69a;
-    --zx-green-test: var() --zx-green-light: #7dbdb4;
     --zx-green-vivid-light: rgba(72, 161, 148, 0.7);
     --zx-green-vivid-m-light: rgba(72, 161, 148, 0.4);
     --zx-green-vivid-v-light: rgba(72, 161, 148, 0.2);
@@ -134,4 +138,28 @@ body {
 
 .shadow-85-strong {
     box-shadow: 0 0 13px rgba(85, 85, 85, 0.4);
+}
+
+.zx-text-primary {
+    color: mat.get-color-from-palette($light-primary, 500);
+}
+
+// settings nav
+
+.zx-settings-nav {
+    width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+    .zx-settings-nav {
+        width: 400px;
+        max-width: 70%;
+        border: 1px solid var(--zx-gray-v-v-light);
+        background-color: var(--zx-gray-v-v-v-light);
+    }
+}
+
+.zx-settings-nav-dark {
+    border: 1px solid var(--mat-sidenav-content-background-color);
+    background-color: var(--zx-gray-85);
 }

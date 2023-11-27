@@ -25,11 +25,12 @@
                     matRipple [class.step-item-dark]="isDarkMode">
                     <img src="assets/images/express-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
                     <div class="d-flex flex-column">
-                        <h5 class="zx-title-text zx-switch-text" [class.text-white]="printingService === 'express'">
+                        <h5 class="zx-title-text zx-switch-text"
+                            [class.zx-text-primary]="printingService === 'express'">
                             {{'choose-system.title-exptess' | translate}}
                         </h5>
                         <span class="opacity-75 zx-explanation-text zx-switch-text"
-                            [class.text-white]="printingService === 'express'">
+                            [class.zx-text-primary]="printingService === 'express'">
                             {{'choose-system.explanation-exptess' | translate}}
                         </span>
                     </div>
@@ -40,11 +41,12 @@
                     matRipple [class.step-item-dark]="isDarkMode">
                     <img src="assets/images/plotter-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
                     <div class="d-flex flex-column">
-                        <h5 class="zx-title-text zx-switch-text" [class.text-white]="printingService === 'plotter'">
+                        <h5 class="zx-title-text zx-switch-text"
+                            [class.zx-text-primary]="printingService === 'plotter'">
                             {{'choose-system.title-plotter' | translate}}
                         </h5>
                         <span class="opacity-75 zx-explanation-text zx-switch-text"
-                            [class.text-white]="printingService === 'plotter'">
+                            [class.zx-text-primary]="printingService === 'plotter'">
                             {{'choose-system.explanation-plotter' | translate}}
                         </span>
                     </div>
@@ -54,11 +56,11 @@
                     matRipple [class.step-item-dark]="isDarkMode">
                     <img src="assets/images/ph-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
                     <div class="d-flex flex-column">
-                        <h5 class="zx-title-text zx-switch-text" [class.text-white]="printingService === 'ph'">
+                        <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="printingService === 'ph'">
                             {{'choose-system.title-ph' | translate}}
                         </h5>
                         <span class="opacity-75 zx-explanation-text zx-switch-text"
-                            [class.text-white]="printingService === 'ph'">
+                            [class.zx-text-primary]="printingService === 'ph'">
                             {{'choose-system.explanation-ph' | translate}}
                         </span>
                     </div>

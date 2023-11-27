@@ -16,7 +16,6 @@ export class MainSectionComponent implements OnInit, OnDestroy {
   private directionSubscription: Subscription;
   isDarkMode: boolean = true;
 
-
   constructor(private directionService: DirectionService) { }
 
   ngOnInit() {
