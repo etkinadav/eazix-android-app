@@ -14,5 +14,11 @@
     "choose-system.title-plotter": "הדפסת פלוטר",
     "choose-system.explanation-plotter": "הדפסת תמונות, שרטוטים ועבודות גרפיות בפורמט רחב (על גליונות נייר רחבים). איסוף מידי דרך עמדות ההדפסה האוטומטיות שלנו.",
     "choose-system.title-ph": "הדפסה בבתי דפוס",
-    "choose-system.explanation-ph": "הדפסה על מגוון נרחב של חומרים, מוצרים ופורמטים בהתאמה אישית. מחירים משתלמים להדפסה במגוון בתי דפוס הזמינים לכם בפריסה ארצית."
+    "choose-system.explanation-ph": "הדפסה על מגוון נרחב של חומרים, מוצרים ופורמטים בהתאמה אישית. מחירים משתלמים להדפסה במגוון בתי דפוס הזמינים לכם בפריסה ארצית.",
+    "choose-branch.naming.rupin": "המרכז האקדמי רופין",
+    "choose-branch.naming.bezalelarch": "בצלאל ארכיטקטורה",
+    "choose-branch.naming.unitlv": "אונ' ת\"א",
+    "choose-branch.city.rupin": "עמק חפר",
+    "choose-branch.city.bezalelarch": "ירושלים",
+    "choose-branch.city.unitlv": "ת\"א"
 }

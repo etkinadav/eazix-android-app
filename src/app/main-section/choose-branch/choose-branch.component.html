@@ -1,0 +1,147 @@
+<!-- <div #articleElements class="full-screen"></div> -->
+
+<div class="full-screen overflow-hidden">
+    <div class="d-flex flex-grow-1">
+        <div class="zx-settings-nav h-100 d-flex flex-column overflow-auto" [class.zx-settings-nav-dark]="isDarkMode">
+            <article class="w-100 d-flex flex-column gap-3 pt-3 px-1 px-sm-2">
+
+                <div class="zx-top-container w-100 d-flex justify-content-between align-items-center">
+                    <h6 class="zx-main-title">
+                        {{'choose-branch.2.title' | translate}}
+                    </h6>
+                </div>
+
+
+
+
+
+
+
+                <!-- <div *ngFor="let createdBranch of branches" (click)="onChooseBranch(createdBranch)"
+                    [class.zx-step-choosen]="branch === createdBranch"
+                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                    matRipple [class.step-item-dark]="isDarkMode">
+                    <img src="assets/images/express-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
+                    <div class="d-flex flex-column">
+                        <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="branch === createdBranch">
+                            {{ createdBranch }}
+                        </h5>
+                        <span class="opacity-75 zx-explanation-text zx-switch-text"
+                            [class.zx-text-primary]="branch === createdBranch">
+                            {{ createdBranch }}
+                        </span>
+                    </div>
+                </div> -->
+
+
+
+
+                <div *ngFor="let createdBranch of branches" (click)="onChooseBranch(createdBranch.name)"
+                    [class.zx-step-choosen]="branch === createdBranch.name"
+                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                    matRipple [class.step-item-dark]="isDarkMode">
+                    <img [src]="'assets/images/branch/' + createdBranch.name + '.jpg'" alt="Branch Logo"
+                        class="p-3 zx-branch-img rounded-3">
+                    <div class="d-flex flex-column">
+                        <h5 class="zx-title-text zx-switch-text"
+                            [class.zx-text-primary]="branch === createdBranch.name">
+                            {{ "choose-branch.naming." + createdBranch.name | translate }}
+                        </h5>
+                        <span class="opacity-75 zx-explanation-text zx-switch-text"
+                            [class.zx-text-primary]="branch === createdBranch.name">
+                            {{ "choose-branch.city." + createdBranch.name | translate }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- <div *ngFor="let branch of branches">
+                    <h3>{{ "choose-branch.naming." + branch.name | translate }}</h3>
+                    <p>{{ "choose-branch.city." + branch.name | translate }}</p>
+                </div> -->
+
+
+
+
+                <!-- <div *ngFor="let branch of branches" (click)="onChooseBranch(branch)">
+                    {{ branch }}
+                </div>
+
+                <div (click)="onChooseBranch('rupin')" [class.zx-step-choosen]="branch === 'rupin'"
+                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                    matRipple [class.step-item-dark]="isDarkMode">
+                    <img src="assets/images/express-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
+                    <div class="d-flex flex-column">
+                        <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="branch === 'rupin'">
+                            BRANCH-H5-01
+                        </h5>
+                        <span class="opacity-75 zx-explanation-text zx-switch-text"
+                            [class.zx-text-primary]="branch === 'rupin'">
+                            BRANCH-SPAN-01
+                        </span>
+                    </div>
+                </div>
+
+                <div (click)="onChooseBranch('bezalelarc')" [class.zx-step-choosen]="branch === 'bezalelarc'"
+                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                    matRipple [class.step-item-dark]="isDarkMode">
+                    <img src="assets/images/plotter-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
+                    <div class="d-flex flex-column">
+                        <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="branch === 'bezalelarc'">
+                            BRANCH-H5-02
+                        </h5>
+                        <span class="opacity-75 zx-explanation-text zx-switch-text"
+                            [class.zx-text-primary]="branch === 'bezalelarc'">
+                            BRANCH-SPAN-02
+                        </span>
+                    </div>
+                </div>
+                <div (click)="onChooseBranch('unitlv')" [class.zx-step-choosen]="branch === 'unitlv'"
+                    class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
+                    matRipple [class.step-item-dark]="isDarkMode">
+                    <img src="assets/images/ph-big-icon.svg" alt="WhatsUp Logo" class="p-3 zx-service-img">
+                    <div class="d-flex flex-column">
+                        <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="branch === 'unitlv'">
+                            BRANCH-H5-03
+                        </h5>
+                        <span class="opacity-75 zx-explanation-text zx-switch-text"
+                            [class.zx-text-primary]="branch === 'unitlv'">
+                            BRANCH-SPAN-03
+                        </span>
+                    </div>
+                </div> -->
+
+
+
+
+
+
+
+                <div class="w-100 opacity-50">
+                    <hr>
+                    <h6 class="zx-main-title">
+                        {{'choose-branch.2.title' | translate}}
+                    </h6>
+                </div>
+                <div class="w-100 opacity-50">
+                    <hr>
+                    <h6 class="zx-main-title">
+                        {{'choose-printing-table.3.title' | translate}}
+                    </h6>
+                </div>
+                <div class="ender"></div>
+
+            </article>
+        </div>
+        <div class="d-none d-sm-flex h-100 flex-grow-1 justify-content-center align-items-center">
+            <article
+                class="zx-canvas shadow-85 rounded-3 d-flex justify-content-center align-items-center position-relative">
+            </article>
+        </div>
+    </div>
+</div>
+<div class="w-100 p-2 p-lg-3 shadow-85-strong">
+    <button type="button" mat-raised-button color="primary" [disabled]="branch === ''"
+        class="text-white rounded-pill w-100">
+        {{ 'choose-system.continue' | translate }}
+    </button>
+</div>

@@ -14,5 +14,11 @@
 	"choose-system.title-plotter": "Plotter Printing",
 	"choose-system.explanation-plotter": "Printing photos, drawings and graphic works in wide format (on wide sheets of paper). Immediate collection through our automatic printing stations.",
 	"choose-system.title-ph": "Via Printing Houses",
-	"choose-system.explanation-ph": "Printing on a wide variety of materials, products and customized formats. Affordable prices for printing in a variety of printing houses available to you nationwide."
+	"choose-system.explanation-ph": "Printing on a wide variety of materials, products and customized formats. Affordable prices for printing in a variety of printing houses available to you nationwide.",
+	"choose-branch.naming.rupin": "Rupin Accademic center",
+	"choose-branch.naming.bezalelarch": "Bezalel Architecture",
+	"choose-branch.naming.unitlv": "Tel Aviv university",
+	"choose-branch.city.rupin": "Emek Hefer",
+	"choose-branch.city.bezalelarch": "Jerusalem",
+	"choose-branch.city.unitlv": "Tel Aviv"
 }

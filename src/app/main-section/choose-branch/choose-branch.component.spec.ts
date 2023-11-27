@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainSectionComponent } from './main-section.component';
+import { ChooseBranchComponent } from './choose-branch.component';
 
 describe('MainSectionComponent', () => {
-  let component: MainSectionComponent;
-  let fixture: ComponentFixture<MainSectionComponent>;
+  let component: ChooseBranchComponent;
+  let fixture: ComponentFixture<ChooseBranchComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MainSectionComponent]
+      declarations: [ChooseBranchComponent]
     });
-    fixture = TestBed.createComponent(MainSectionComponent);
+    fixture = TestBed.createComponent(ChooseBranchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

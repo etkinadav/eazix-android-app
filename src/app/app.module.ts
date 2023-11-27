@@ -11,7 +11,9 @@ import { ErrorInterceptor } from "./error-interceptor";
 import { ErrorComponent } from "./error/error.component";
 import { AngularMaterialModule } from "./angular-material.module";
 import { PostsModule } from "./posts/posts.module";
-import { MainSectionComponent } from "./main-section/main-section.component";
+
+import { ChoosePrintingSystemComponent } from "./main-section/choose-printing-system/choose-printing-system.component"
+import { ChooseBranchComponent } from "./main-section/choose-branch/choose-branch.component"
 
 import { MainNavComponent } from './main-nav/main-nav.component';
 
@@ -26,7 +28,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     HeaderComponent,
     ErrorComponent,
     MainNavComponent,
-    MainSectionComponent
+    ChoosePrintingSystemComponent,
+    ChooseBranchComponent
   ],
   imports: [
     BrowserModule,
