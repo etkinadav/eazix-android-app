@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './choose-branch.component.html',
   styleUrls: ['./choose-branch.component.css'],
   host: {
-    class: 'fillScreen'
+    class: 'fill-screen'
   }
 })
 

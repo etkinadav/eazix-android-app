@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './choose-printing-system.component.html',
   styleUrls: ['./choose-printing-system.component.css'],
   host: {
-    class: 'fillScreen'
+    class: 'fill-screen'
   }
 })
 

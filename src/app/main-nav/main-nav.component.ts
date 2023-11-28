@@ -9,7 +9,7 @@ import { DirectionService } from '../direction.service';
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.css'],
   host: {
-    class: 'fillScreen'
+    class: 'fill-screen'
   }
 })
 

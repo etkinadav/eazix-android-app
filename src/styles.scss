@@ -34,6 +34,8 @@ $dark-warn: mat.define-palette(palette.$dark-warn);
     @include mat.all-component-themes($dark-theme);
 }
 
+/* -----------------------------===---------------------------------- BODY ----===---- */
+
 html,
 body {
     height: 100vh !important;
@@ -43,15 +45,7 @@ body {
     margin: 0;
 }
 
-.spacer {
-    flex: 1 1 0;
-}
-
-.full-screen {
-    width: 100%;
-    flex: 1 0 0;
-    display: flex;
-}
+/* -----------------------------===---------------------------------- EAZIX PALLETE ----===---- */
 
 :root {
     /* -----------------------------===---------------------------------- DARK */
@@ -105,7 +99,19 @@ body {
     --ez-whatsup-bg-hover: #259618;
 }
 
-.fillScreen {
+/* -----------------------------===---------------------------------- GENERAL USE ----===---- */
+
+.spacer {
+    flex: 1 1 0;
+}
+
+.full-screen {
+    width: 100%;
+    flex: 1 0 0;
+    display: flex;
+}
+
+.fill-screen {
     width: 100% !important;
     display: flex !important;
     flex-grow: 1 !important;
@@ -113,7 +119,36 @@ body {
     flex-direction: column !important;
 }
 
-/* -----------------------------===---------------------------------- SCROLLERS */
+.svg {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+// .justify-content-flex-start {
+//     justify-content: flex-start !important;
+// }
+
+/* -----------------------------===---------------------------------- SHADOWS ----===---- */
+
+.shadow-85 {
+    box-shadow: 0 0 10px rgba(85, 85, 85, 0.1);
+}
+
+.shadow-85-strong {
+    box-shadow: 0 0 13px rgba(85, 85, 85, 0.4);
+}
+
+.zx-text-primary {
+    color: mat.get-color-from-palette($light-primary, 500);
+}
+
+/* -----------------------------===---------------------------------- SCROLLERS ----===---- */
 
 /* width */
 ::-webkit-scrollbar {
@@ -132,19 +167,7 @@ body {
     background: var(--zx-green);
 }
 
-.shadow-85 {
-    box-shadow: 0 0 10px rgba(85, 85, 85, 0.1);
-}
-
-.shadow-85-strong {
-    box-shadow: 0 0 13px rgba(85, 85, 85, 0.4);
-}
-
-.zx-text-primary {
-    color: mat.get-color-from-palette($light-primary, 500);
-}
-
-// settings nav
+/* -----------------------------===---------------------------------- SETTINGS NAV (AREA) ----===---- */
 
 .zx-settings-nav {
     width: 100%;
@@ -154,6 +177,7 @@ body {
     .zx-settings-nav {
         width: 400px;
         max-width: 70%;
+        flex-shrink: 0;
         border: 1px solid var(--zx-gray-v-v-light);
         background-color: var(--zx-gray-v-v-v-light);
     }
@@ -164,13 +188,79 @@ body {
     background-color: var(--zx-gray-85);
 }
 
-.svg {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex-shrink: 0;
+/* --------===------------- STEP ITEM ----===---- */
+
+.step-item {
+    background-color: white;
+    border: 1px solid var(--zx-gray-v-light-opacity);
+    min-height: 140px;
 }
 
-.c-pointer {
+.step-item-dark {
+    background-color: var(--zx-gray-85);
+}
+
+.step-item:hover {
+    background-color: var(--zx-green-vivid-v-light);
+    box-shadow: 4px 4px 15px var(--zx-gray-85);
+    transition: 300ms;
     cursor: pointer;
+}
+
+.zx-step-choosen {
+    background: var(--zx-green-slightly-light);
+    border: 1px solid var(--zx-green-vivid-light);
+    box-shadow: 0 0 10px var(--zx-gray-85);
+}
+
+.zx-step-choosen:hover {
+    background: var(--zx-green-slightly-light);
+    border: 1px solid var(--zx-green-vivid-light);
+    box-shadow: 0 0 10px var(--zx-gray-85);
+}
+
+/* --------===------------- MAIN CANVAS ----===---- */
+
+.zx-canvas {
+    height: 95%;
+    width: 85%;
+    max-width: 440px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--zx-gray-v-light);
+}
+
+/* --------===------------- MORE SETTINGS NAV (AREA) ----===---- */
+
+.zx-top-container-big {
+    height: 28px;
+}
+
+.zx-top-container-small {
+    height: 16px;
+}
+
+.zx-big-icon-size {
+    width: 110px;
+    height: auto;
+}
+
+.zx-border-pink-v-v-light {
+    border: 1px solid var(--zx-pink-v-v-light);
+}
+
+.zx-border-green {
+    border: 1px solid var(--zx-green);
+    background-color: var(--zx-green-v-light);
+}
+
+/* -----------------------------===---------------------------------- ICONS ----===---- */
+
+.zx-small-icon-size {
+    width: 20px;
+    height: auto;
+}
+
+.zx-tiny-icon-size {
+    width: 9px;
+    height: auto;
 }
