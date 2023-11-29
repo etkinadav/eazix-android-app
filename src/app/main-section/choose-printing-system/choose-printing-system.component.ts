@@ -15,11 +15,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
-  isRTL = false; // Flag to track the current direction
+  isRTL = false;
   private directionSubscription: Subscription;
   isDarkMode: boolean = true;
   public printingService: string = '';
-  tooltipContent: string = ''; // The tooltip content to be displayed
+  private printingServiceSubscription: Subscription;
+  tooltipContent: string = '';
 
   constructor(private directionService: DirectionService, private dataSharingService: DataSharingService, private router: Router, private translateService: TranslateService) {
     this.translateService.onLangChange.subscribe(() => {
@@ -34,8 +35,22 @@ export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
 
     this.directionService.isDarkMode$.subscribe(isDarkMode => {
       this.isDarkMode = isDarkMode;
-      console.log("isDarkMode:!!" + this.isDarkMode)
     });
+
+    this.printingServiceSubscription = this.dataSharingService.getPrintingService().subscribe((value) => {
+      this.printingService = value;
+    });
+
+    this.dataSharingService.getPrintingService().subscribe(
+      (value) => {
+        if (this.printingService === "express" || this.printingService === "plotter" || this.printingService === "ph") {
+          this.printingService = value;
+        }
+      },
+      (error) => {
+        this.router.navigate(['/']);
+      }
+    );
   }
 
   ngOnDestroy() {

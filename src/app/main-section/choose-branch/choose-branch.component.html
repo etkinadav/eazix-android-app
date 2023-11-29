@@ -7,17 +7,18 @@
                 <article class="w-100 d-flex flex-column gap-3 flex-grow-1">
 
                     <div class="w-100">
-                        <div class="w-100 d-flex justify-content-between align-items-center px-1 gap-2 c-pointer">
+                        <div class="w-100 d-flex justify-content-between align-items-center px-1 gap-2 c-pointer"
+                            (click)="goToHome()">
                             <div matRipple
-                                class="flex-grow-1 flex-sm-grow-0 px-3 py-2 rounded-2 zx-border-pink-v-v-light"
+                                class="flex-grow-1 flex-md-grow-0 px-3 py-2 rounded-2 zx-border-pink-v-v-light"
                                 [class.zx-border-green]="isDarkMode">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img [src]="'assets/images/' + printingService + '-big-icon.svg'"
+                                    <img [src]="'assets/images/' + printingService + '-icon.svg'"
                                         alt="choosen printing system icon" class="zx-small-icon-size">
                                     <span class="zx-explanation-text">
                                         {{ "choose-system.title-short-" + printingService | translate }}
                                     </span>
-                                    <span class="spacer d-sm-none"></span>
+                                    <span class="spacer d-md-none"></span>
                                     <img *ngIf="!isDarkMode" src="/assets/images/tiny-arrow-icon.svg"
                                         class="svg zx-tiny-icon-size c-pointer">
                                     <img *ngIf="isDarkMode" src="/assets/images/tiny-arrow-icon-green.svg"
@@ -79,9 +80,10 @@
             </div>
         </div>
 
-        <div class="d-none d-sm-flex h-100 flex-grow-1 justify-content-center align-items-center">
+        <div class="d-none d-md-flex h-100 flex-grow-1 justify-content-center align-items-center">
             <article
-                class="zx-canvas shadow-85 rounded-3 d-flex justify-content-center align-items-center position-relative">
+                class="zx-canvas shadow-85 rounded-3 d-flex justify-content-center align-items-center position-relative"
+                [class.zx-canvas-dark]="isDarkMode">
             </article>
         </div>
     </div>

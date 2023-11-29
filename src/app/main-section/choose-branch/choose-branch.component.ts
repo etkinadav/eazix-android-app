@@ -32,20 +32,16 @@ export class ChooseBranchComponent implements OnInit, OnDestroy {
 
     this.directionService.isDarkMode$.subscribe(isDarkMode => {
       this.isDarkMode = isDarkMode;
-      console.log("isDarkMode:!!" + this.isDarkMode)
     });
 
     this.printingServiceSubscription = this.dataSharingService.getPrintingService().subscribe((value) => {
       this.printingService = value;
-      console.log("Printing service updated:", this.printingService);
     });
 
     this.dataSharingService.getPrintingService().subscribe(
       (value) => {
         if (this.printingService === "express" || this.printingService === "plotter" || this.printingService === "ph") {
-          this.branch = value;
-          console.log("printingService is");
-          console.log(this.printingService);
+          this.printingService = value;
         } else {
           this.router.navigate(['/']);
         }
@@ -58,7 +54,6 @@ export class ChooseBranchComponent implements OnInit, OnDestroy {
     this.branches = this.dataSharingService.getBranches();
 
     this.filteredBranches = this.branches.filter(branch => branch.systems.includes(this.printingService));
-    console.log(this.filteredBranches);
   }
 
   ngOnDestroy() {
@@ -75,4 +70,9 @@ export class ChooseBranchComponent implements OnInit, OnDestroy {
   isPrintingServiceEmpty(): boolean {
     return this.branch === '';
   }
+
+  goToHome() {
+    this.router.navigate(['/']);
+  }
+
 }

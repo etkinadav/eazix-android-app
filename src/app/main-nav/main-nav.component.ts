@@ -1,8 +1,11 @@
-import { Component, ViewEncapsulation, Inject, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, Renderer2 } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
+import { Subscription } from "rxjs";
 
 import { DOCUMENT } from '@angular/common';
 import { DirectionService } from '../direction.service';
+import { AuthService } from "../auth/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-main-nav',
@@ -13,34 +16,61 @@ import { DirectionService } from '../direction.service';
   }
 })
 
-export class MainNavComponent {
+export class MainNavComponent implements OnInit, OnDestroy {
+  userIsAuthenticated = false;
+  private authListenerSubs: Subscription;
+
   isDrawerOpen: boolean = false;
   isRtl: boolean;
   public selectedLanguage: string = 'en';
   public selectedTheme: string = 'light';
   public isDarkTheme: boolean = false;
+  tooltipContentMode: string = '';
+  tooltipContentLanguage: string = '';
 
-  constructor(public translate: TranslateService, private directionService: DirectionService, @Inject(DOCUMENT) private document: Document,
-    private render: Renderer2) { }
+  constructor(
+    public translateService: TranslateService,
+    private directionService: DirectionService,
+    @Inject(DOCUMENT) private document: Document,
+    private authService: AuthService,
+    private router: Router,
+    private render: Renderer2) {
+    this.translateService.onLangChange.subscribe(() => {
+      this.updateTooltipContent();
+    });
+  }
+
+  ngOnInit() {
+    this.userIsAuthenticated = this.authService.getIsAuth();
+    this.authListenerSubs = this.authService
+      .getAuthStatusListener()
+      .subscribe(isAuthenticated => {
+        this.userIsAuthenticated = isAuthenticated;
+      });
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
+
+  ngOnDestroy() {
+    this.authListenerSubs.unsubscribe();
+  }
 
   toggleDrawer() {
     this.isDrawerOpen = !this.isDrawerOpen;
-    console.log("toggleDrawer");
   }
 
   openDrawer() {
     this.isDrawerOpen = true;
-    console.log("openDrawer");
   }
 
   closeDrawer() {
     this.isDrawerOpen = false;
-    console.log("closeDrawer");
   }
 
   changeTheme(themeValue: string) {
     if (themeValue !== this.selectedTheme) {
-      console.log('switching to ' + themeValue + ' Theme!');
       this.selectedTheme = themeValue;
       this.render.removeClass(this.document.body, 'lightTheme');
       this.render.removeClass(this.document.body, 'darkTheme');
@@ -57,9 +87,8 @@ export class MainNavComponent {
 
   goToLanguage(lang) {
     if (lang !== this.selectedLanguage) {
-      console.log('switching to ' + lang + ' Language!');
       this.selectedLanguage = lang;
-      this.translate.use(lang);
+      this.translateService.use(lang);
       this.directionService.toLanguageDirection(lang);
     }
   }
@@ -67,5 +96,18 @@ export class MainNavComponent {
   toggleDarkMode(isDarkMode: boolean) {
     // Call this method when dark mode changes
     this.directionService.setDarkMode(isDarkMode);
+  }
+
+  goToLogin() {
+    this.router.navigate(['/auth/login']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/']);
+  }
+
+  updateTooltipContent() {
+    this.tooltipContentMode = this.translateService.instant('main-nav.tooltip-mode');
+    this.tooltipContentLanguage = this.translateService.instant('main-nav.tooltip-language');
   }
 }

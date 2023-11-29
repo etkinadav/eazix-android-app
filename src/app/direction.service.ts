@@ -23,13 +23,11 @@ export class DirectionService {
 
     toLanguageDirection(lang: string) {
         if (this.LTRLanguages.includes(lang)) {
-            console.log('lang is LTRLanguages');
             if (!this.LTRLanguages.includes(this.currenLanguage)) {
                 this.currenLanguage = lang;
                 this.toggleDirection();
             }
         } else {
-            console.log('lang is not LTRLanguages');
             if (this.LTRLanguages.includes(this.currenLanguage)) {
                 this.currenLanguage = lang;
                 this.toggleDirection();

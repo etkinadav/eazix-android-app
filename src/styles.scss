@@ -173,7 +173,7 @@ body {
     width: 100%;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 768px) {
     .zx-settings-nav {
         width: 400px;
         max-width: 70%;
@@ -225,8 +225,11 @@ body {
     height: 95%;
     width: 85%;
     max-width: 440px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid var(--zx-gray-v-light);
+    background-color: white;
+}
+
+.zx-canvas-dark {
+    background-color: var(--zx-gray-85);
 }
 
 /* --------===------------- MORE SETTINGS NAV (AREA) ----===---- */
@@ -249,7 +252,7 @@ body {
 }
 
 .zx-border-green {
-    border: 1px solid var(--zx-green);
+    border: 1px solid var(--zx-green) !important;
     background-color: var(--zx-green-v-light);
 }
 

@@ -27,8 +27,9 @@
       <div class="spacer"></div>
 
       <div class="w-100 d-flex justify-content-between px-2">
-        <button mat-icon-button aria-label="Language" [matMenuTriggerFor]="menuLanguage"
-          class="d-flex justify-content-center align-item-center">
+
+        <button mat-icon-button aria-label="Set mode" [matMenuTriggerFor]="menuLanguage"
+          [matTooltip]="tooltipContentLanguage" class="d-flex justify-content-center align-item-center">
           <mat-icon>language</mat-icon>
         </button>
         <mat-menu #menuLanguage="matMenu">
@@ -36,8 +37,9 @@
           <button class="mat-menu-item-small" mat-menu-item (click)="goToLanguage('he')">עברית</button>
           <button class="mat-menu-item-small" mat-menu-item (click)="goToLanguage('ar')">العربية</button>
         </mat-menu>
-        <button mat-icon-button aria-label="Language" [matMenuTriggerFor]="menuTheme"
-          class="d-flex justify-content-center align-item-center">
+
+        <button mat-icon-button aria-label="Set language" [matMenuTriggerFor]="menuTheme"
+          [matTooltip]="tooltipContentMode" class="d-flex justify-content-center align-item-center">
           <mat-icon>{{ isDarkTheme ? 'brightness_7' : 'brightness_4' }}</mat-icon>
         </button>
         <mat-menu #menuTheme="matMenu">
@@ -48,6 +50,7 @@
             {{'main-nav.dark-mode' | translate}}
           </button>
         </mat-menu>
+
       </div>
 
     </mat-nav-list>
@@ -58,9 +61,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="spacer"></span>
-      <img src="assets/images/eazix-logo-small.svg" alt="Eazix Logo" class="small-logo">
+      <img src="assets/images/eazix-logo-small.svg" alt="Eazix Logo" class="small-logo c-pointer" (click)="goToHome()">
       <span class="spacer"></span>
-      <button type="button" mat-raised-button color="primary" class="text-white rounded-pill">
+      <button type="button" mat-raised-button color="primary" class="text-white rounded-pill" (click)="goToLogin()">
         {{'main-nav.log-in' | translate}}
       </button>
     </mat-toolbar>

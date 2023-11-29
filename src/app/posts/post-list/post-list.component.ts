@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from 'rxjs';
 
 import { Post } from "../post.model";
@@ -10,7 +10,6 @@ import { AuthService } from "src/app/auth/auth.service";
   selector: "app-post-list",
   templateUrl: "./post-list.component.html",
   styleUrls: ["./post-list.component.css"],
-  // encapsulation: ViewEncapsulation.None
 })
 export class PostListComponent implements OnInit, OnDestroy {
   posts: Post[] = [];
@@ -31,7 +30,6 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.isLoading = true;
-    console.log("!!!")
     this.postsService.getPosts(this.postsPerPage, this.currentPage);
     this.userId = this.authService.getUserId();
     this.postsSub = this.postsService

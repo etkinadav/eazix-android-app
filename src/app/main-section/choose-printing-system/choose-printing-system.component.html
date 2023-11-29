@@ -26,7 +26,7 @@
                         [class.zx-step-choosen]="printingService === 'express'"
                         class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
                         matRipple [class.step-item-dark]="isDarkMode">
-                        <img src="assets/images/express-big-icon.svg" alt="express Logo" class="p-3 zx-big-icon-size">
+                        <img src="assets/images/express-icon.svg" alt="express Logo" class="p-3 zx-big-icon-size">
                         <div class="d-flex flex-column">
                             <h5 class="zx-title-text zx-switch-text"
                                 [class.zx-text-primary]="printingService === 'express'">
@@ -42,7 +42,7 @@
                         [class.zx-step-choosen]="printingService === 'plotter'"
                         class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
                         matRipple [class.step-item-dark]="isDarkMode">
-                        <img src="assets/images/plotter-big-icon.svg" alt="plotter Logo" class="p-3 zx-big-icon-size">
+                        <img src="assets/images/plotter-icon.svg" alt="plotter Logo" class="p-3 zx-big-icon-size">
                         <div class="d-flex flex-column">
                             <h5 class="zx-title-text zx-switch-text"
                                 [class.zx-text-primary]="printingService === 'plotter'">
@@ -57,7 +57,7 @@
                     <div (click)="onChoosePrintingService('ph')" [class.zx-step-choosen]="printingService === 'ph'"
                         class="step-item w-100 rounded-3 shadow-85 d-flex flex-column flex-sm-row justify-content-around justify-content-sm-start p-2 align-items-center"
                         matRipple [class.step-item-dark]="isDarkMode">
-                        <img src="assets/images/ph-big-icon.svg" alt="ph Logo" class="p-3 zx-big-icon-size">
+                        <img src="assets/images/ph-icon.svg" alt="ph Logo" class="p-3 zx-big-icon-size">
                         <div class="d-flex flex-column">
                             <h5 class="zx-title-text zx-switch-text" [class.zx-text-primary]="printingService === 'ph'">
                                 {{'choose-system.title-ph' | translate}}
@@ -93,21 +93,23 @@
             </div>
         </div>
 
-        <div class="d-none d-sm-flex h-100 flex-grow-1 justify-content-center align-items-center">
+        <div class="d-none d-md-flex h-100 flex-grow-1 justify-content-center align-items-center">
             <article
-                class="zx-canvas shadow-85 rounded-3 d-flex justify-content-center align-items-center position-relative">
+                class="zx-canvas shadow-85 rounded-3 d-flex justify-content-center align-items-center position-relative"
+                [class.zx-canvas-dark]="isDarkMode">
                 <div *ngIf="printingService !== ''"
                     class="zx-canvas-inner d-flex justify-content-between align-items-center flex-column w-100 px-5">
                     <h5 class="d-lg-none text-center">
                         {{ 'choose-system.title-' + printingService | translate }}
                     </h5>
                     <div class="w-100 d-none d-lg-flex">
-                        <button type="button" mat-stroked-button color="primary" class="rounded-pill w-100"
+                        <button type="button" mat-stroked-button color="primary"
+                            class="rounded-pill w-100 zx-border-green"
                             (click)="!isPrintingServiceEmpty() && onUserStep()">
                             {{ 'choose-system.btn-tooltip-' + printingService | translate }}
                         </button>
                     </div>
-                    <img [src]="'assets/images/' + printingService + '-big-icon.svg'" alt="express Logo"
+                    <img [src]="'assets/images/' + printingService + '-icon.svg'" [alt]="printingService + ' Logo'"
                         class="zx-big-icon-size d-none d-md-flex">
                     <p class="text-center"> {{ 'choose-system.explanation-' + printingService |
                         translate }}</p>
