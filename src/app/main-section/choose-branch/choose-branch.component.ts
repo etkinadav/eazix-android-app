@@ -3,6 +3,7 @@ import { DirectionService } from '../../direction.service';
 import { Subscription } from 'rxjs';
 import { DataSharingService } from '../data-shering-service/data-sharing.service';
 import { Router } from '@angular/router';
+import { ModalsService } from '../../modals.service';
 
 @Component({
   selector: 'app-choose-branch',
@@ -23,7 +24,12 @@ export class ChooseBranchComponent implements OnInit, OnDestroy {
   public branches: { name: string; number: number; systems: string[] }[] = [];
   public filteredBranches: { name: string, number: number, systems: string[] }[] = [];
 
-  constructor(private directionService: DirectionService, private dataSharingService: DataSharingService, private router: Router) { }
+  constructor(
+    private directionService: DirectionService,
+    private dataSharingService: DataSharingService,
+    private router: Router,
+    private modalsService: ModalsService
+  ) { }
 
   ngOnInit() {
     this.directionSubscription = this.directionService.direction$.subscribe(direction => {
@@ -75,4 +81,7 @@ export class ChooseBranchComponent implements OnInit, OnDestroy {
     this.router.navigate(['/']);
   }
 
+  openLoginDialog() {
+    this.modalsService.onOpenLoginDialog();
+  }
 }

@@ -39,7 +39,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         MatRippleModule,
         MatTooltipModule,
         MatSelectModule,
-        MatFormFieldModule
+        MatFormFieldModule,
     ]
 })
 

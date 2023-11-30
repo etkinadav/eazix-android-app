@@ -5,3 +5,9 @@ mat-form-field {
 mat-spinner {
     margin: auto;
 }
+
+div.mat-mdc-dialog-surface {
+    display: flex !important;
+    /* Apply display: flex to the dialog content */
+    /* Add other flex properties if needed */
+}

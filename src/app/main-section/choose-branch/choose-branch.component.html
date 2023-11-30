@@ -1,9 +1,8 @@
-<!-- <div #articleElements class="full-screen"></div> -->
-
 <div class="full-screen overflow-hidden">
     <div class="d-flex flex-grow-1">
-        <div class="zx-settings-nav h-100 d-flex flex-column overflow-auto" [class.zx-settings-nav-dark]="isDarkMode">
-            <article class="w-100 d-flex py-3 px-1 px-sm-2 flex-column overflow-auto">
+        <div class="zx-settings-nav flex-shrink h-100 d-flex flex-column overflow-hidden"
+            [class.zx-settings-nav-dark]="isDarkMode">
+            <article class="w-100 h-100 d-flex py-3 px-1 px-sm-3 flex-column overflow-auto">
                 <article class="w-100 d-flex flex-column gap-3 flex-grow-1">
 
                     <div class="w-100">
@@ -74,7 +73,7 @@
             </article>
             <div class="w-100 p-2 shadow-85-strong">
                 <button type="button" mat-raised-button color="primary" [disabled]="branch === ''"
-                    class="text-white rounded-pill w-100">
+                    (click)="openLoginDialog()" class="text-white rounded-pill w-100">
                     {{ 'choose-system.continue' | translate }}
                 </button>
             </div>

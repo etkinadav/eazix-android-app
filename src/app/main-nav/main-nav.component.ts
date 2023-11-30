@@ -6,6 +6,7 @@ import { DOCUMENT } from '@angular/common';
 import { DirectionService } from '../direction.service';
 import { AuthService } from "../auth/auth.service";
 import { Router } from "@angular/router";
+import { ModalsService } from '../modals.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -19,7 +20,6 @@ import { Router } from "@angular/router";
 export class MainNavComponent implements OnInit, OnDestroy {
   userIsAuthenticated = false;
   private authListenerSubs: Subscription;
-
   isDrawerOpen: boolean = false;
   isRtl: boolean;
   public selectedLanguage: string = 'en';
@@ -34,9 +34,10 @@ export class MainNavComponent implements OnInit, OnDestroy {
     @Inject(DOCUMENT) private document: Document,
     private authService: AuthService,
     private router: Router,
-    private render: Renderer2) {
+    private render: Renderer2,
+    private modalsService: ModalsService) {
     this.translateService.onLangChange.subscribe(() => {
-      this.updateTooltipContent();
+      this.updateTranslation();
     });
   }
 
@@ -94,20 +95,19 @@ export class MainNavComponent implements OnInit, OnDestroy {
   }
 
   toggleDarkMode(isDarkMode: boolean) {
-    // Call this method when dark mode changes
     this.directionService.setDarkMode(isDarkMode);
-  }
-
-  goToLogin() {
-    this.router.navigate(['/auth/login']);
   }
 
   goToHome() {
     this.router.navigate(['/']);
   }
 
-  updateTooltipContent() {
+  updateTranslation() {
     this.tooltipContentMode = this.translateService.instant('main-nav.tooltip-mode');
     this.tooltipContentLanguage = this.translateService.instant('main-nav.tooltip-language');
+  }
+
+  openLoginDialog() {
+    this.modalsService.onOpenLoginDialog();
   }
 }

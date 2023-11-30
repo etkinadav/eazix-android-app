@@ -20,11 +20,16 @@ export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
   isDarkMode: boolean = true;
   public printingService: string = '';
   private printingServiceSubscription: Subscription;
-  tooltipContent: string = '';
+  continueToServiceText: string = '';
 
-  constructor(private directionService: DirectionService, private dataSharingService: DataSharingService, private router: Router, private translateService: TranslateService) {
+  constructor(
+    private directionService: DirectionService,
+    private dataSharingService: DataSharingService,
+    private router: Router,
+    private translateService: TranslateService
+  ) {
     this.translateService.onLangChange.subscribe(() => {
-      this.updateTooltipContent();
+      this.updateTranslation();
     });
   }
 
@@ -60,7 +65,7 @@ export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
   onChoosePrintingService(value: string) {
     if (value === "express" || value === "plotter" || value === "ph") {
       this.printingService = value;
-      this.updateTooltipContent()
+      this.updateTranslation()
     }
   }
 
@@ -79,7 +84,7 @@ export class ChoosePrintingSystemComponent implements OnInit, OnDestroy {
     this.dataSharingService.setPrintingService(value);
   }
 
-  updateTooltipContent() {
-    this.tooltipContent = this.translateService.instant('choose-system.btn-tooltip-' + this.printingService);
+  updateTranslation() {
+    this.continueToServiceText = this.translateService.instant('choose-system.btn-tooltip-' + this.printingService);
   }
 }
